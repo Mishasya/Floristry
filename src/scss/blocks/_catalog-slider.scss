@@ -1,0 +1,45 @@
+@include viewport--md {
+  .catalog-slider {
+    .catalog-frames {
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+
+    .catalog-slider__pagination {
+      display: flex;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .swiper-pagination-bullets .swiper-pagination-bullet {
+      width: 9.4%;
+      height: 3px;
+      margin: 0 6px;
+      border-radius: 50px;
+      background-color: $color-default-white;
+      opacity: 0.3;
+    }
+
+    .swiper-pagination-bullets .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}
+
+
+@include viewport--sm {
+  .catalog-slider {
+    .catalog-frames__item.swiper-slide {
+      width: 100%;
+    }
+
+    .catalog-slider__pagination {
+      justify-content: space-between;
+    }
+
+    .swiper-pagination-bullets .swiper-pagination-bullet{
+      width: 21.3%;
+      margin: 0;
+    }
+  }
+}

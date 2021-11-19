@@ -1,0 +1,41 @@
+.services {
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.services__col {
+  flex: 1 0 auto;
+}
+
+.services__btn-order {
+  margin-bottom: clamp(70px, 9vh, 147px);
+  align-self: flex-start;
+}
+
+
+@include viewport--lg {
+  .services {
+    flex-direction: column;
+    padding-top: 120px;
+  }
+
+  .services__col {
+    flex: 1 1 auto;
+  }
+
+  .services__btn-order {
+    margin-bottom: 0;
+  }
+}
+
+
+@include viewport--sm {
+  .services {
+    padding-top: 64px;
+  }
+
+  .services__btn-order {
+    margin-bottom: 50px;
+  }
+}

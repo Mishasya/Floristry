@@ -1,0 +1,26 @@
+.nav-list {
+  @include list-reset;
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.nav-list__item:hover {
+  .nav-list__link {
+    color: rgba($color-default-white, 1);
+  }
+}
+
+.nav-list__link {
+  display: block;
+  color: rgba($color-default-white, 0.3);
+  transition: color $default-transition-settings;
+
+  &--active {
+    color: rgba($color-default-white, 1);
+  }
+}
+

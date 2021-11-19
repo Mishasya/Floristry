@@ -1,0 +1,30 @@
+.subtitle {
+  position: relative;
+  margin: 0 auto;
+  font-size: 30px;
+  line-height: 33px;
+  text-align: center;
+  font-weight: 400;
+  color: $color-default-white;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 2.85em;
+    height: 2px;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $color-default-white;
+  }
+}
+
+
+@include viewport--sm {
+  .subtitle {
+    font-size: 20px;
+    line-height: 34px;
+  }
+}

@@ -1,0 +1,48 @@
+.social-list {
+  @include list-reset;
+
+  &__item:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.social-list a {
+  display: flex;
+}
+
+.social-list__svg {
+  &:hover {
+    fill: $color-default-white;
+  }
+
+  &--inst:hover {
+    circle {
+      transition: all $default-transition-settings;
+      opacity: 1;
+      stroke: $color-tamarind;
+    }
+  }
+
+  &--fb:hover {
+    path {
+      transition: all $default-transition-settings;
+      opacity: 1;
+      fill: $color-tamarind;
+    }
+  }
+
+  &--vk:hover {
+    path {
+      transition: all $default-transition-settings;
+      opacity: 1;
+      fill: $color-tamarind;
+    }
+  }
+}
+

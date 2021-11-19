@@ -1,0 +1,56 @@
+.btn {
+  padding: 19px 30px 17px;
+  border: 1px solid $color-default-white;
+  font-size: 12px;
+  line-height: 13px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $color-default-white;
+  background-color: $color-transparent;
+  transition: background-color $default-transition-settings, color $default-transition-settings;
+
+  &--not-opacity {
+    background-color: $color-black;
+    border-color: transparent;
+  }
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &:hover {
+    background-color: $color-default-white;
+    color: $color-default-black;
+  }
+
+  &--light {
+    padding: 17px 30px 16px;
+    color: $color-black;
+    background-color: $color-default-white;
+
+    &:hover {
+      color: $color-default-white;
+      background-color: $color-black;
+    }
+  }
+}
+
+
+@include viewport--md {
+  .btn {
+    padding: 23px 40px 21px;
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
+
+@include viewport--sm {
+  .btn {
+    padding: 19px 36px 18px;
+    font-size: 10px;
+    line-height: 11px;
+  }
+}

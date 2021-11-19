@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 50;
+}
+
+.header__container {
+  max-width: 100%;
+}
+
+
+@include viewport--sm {
+  .header {
+    position: fixed;
+    background-color: $color-tamarind;
+
+    &--color {
+      background-color: $color-tamarind;
+    }
+  }
+
+  .header__container {
+    padding: 0 30px;
+  }
+}

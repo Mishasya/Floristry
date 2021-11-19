@@ -1,0 +1,219 @@
+.catalog-frames {
+  @include list-reset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.6%;
+  max-width: 1520px;
+  width: 86.7%;
+  margin: 0 auto;
+  padding: 15px;
+  padding-bottom: 60px;
+  counter-reset: counter;
+}
+
+.catalog-frames__btn {
+  position: absolute;
+  transform: scale(0);
+  bottom: 20px;
+  transition: transform $default-transition-settings, background-color $default-transition-settings;
+}
+
+.catalog-frames__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: margin 0.7s;
+}
+
+.catalog-frames__decor {
+  position: absolute;
+  display: flex;
+  min-width: 106px;
+  align-items: center;
+  top: 47px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    transition: all 0.8s;
+  }
+
+  &::before {
+    counter-increment: counter;
+    content: "0"counter(counter);
+    left: 0;
+    font-size: 20px;
+    line-height: 13px;
+  }
+
+  &::after {
+    width: 70px;
+    height: 1px;
+    right: 0;
+    bottom: -5px;
+    align-self: flex-end;
+    background-color: $color-default-white;
+  }
+}
+
+.catalog-frames__item {
+  position: relative;
+  display: flex;
+  min-height: 450px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    transform: scale(0);
+    transition: transform 0.5s;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+  }
+
+  &:first-child {
+    background-image: url("../img/catalog-photo1@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/catalog-photo1@2x.jpg");
+    }
+  }
+
+  &:nth-child(2) {
+    background-image: url("../img/catalog-photo2@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/catalog-photo2@2x.jpg");
+    }
+  }
+
+  &:nth-child(3) {
+    background-image: url("../img/catalog-photo3@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/catalog-photo3@2x.jpg");
+    }
+  }
+
+  &:last-child {
+    background-image: url("../img/catalog-photo4@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/catalog-photo4@2x.jpg");
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-frames__item {
+    &:hover,
+    &:focus {
+      &::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transform: scaleX(1.06) scaleY(1.04);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+
+        @media (max-width: 1655px) {
+          transform: scaleX(1.05) scaleY(1.07);
+        }
+      }
+  
+      &::before {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.4);
+        transition: background $default-transition-settings;
+      }
+  
+      .catalog-frames__inner .catalog-frames__btn {
+        position: relative;
+        margin-top: auto;
+        bottom: 0;
+        align-self: flex-start;
+        transform: scale(1);
+        z-index: 50;
+      }
+  
+      .catalog-frames__inner .catalog-frames__title {
+        margin-top: 17em;
+      }
+  
+      .catalog-frames__inner .catalog-frames__decor {
+        flex-direction: row-reverse;
+  
+  
+        &::before {
+          left: 85%;
+        }
+  
+        &::after {
+          right: 33%;
+        }
+      }
+    }
+  }
+} 
+
+.catalog-frames__inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px;
+  padding-top: 36px;
+}
+
+
+@media (min-width: $viewport--lg) and (max-width: 1655px) {
+  .catalog-frames {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.6%;
+  }
+}
+
+@include viewport--md {
+  .catalog__frames {
+    gap: 0;
+    padding: 0;
+  }
+}
+
+
+@include viewport--sm {
+  .catalog-frames__inner {
+    padding: 36px 19px 16px;
+  }
+
+  .catalog-frames__item {
+    min-height: 392px;
+  }
+
+  .catalog-frames__decor {
+    top: 30px;
+  }
+
+  .catalog-frames__title {
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .catalog-frames__btn {
+    display: none;
+  }
+}

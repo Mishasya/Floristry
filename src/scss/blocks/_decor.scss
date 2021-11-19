@@ -1,0 +1,99 @@
+.decor {
+  position: relative;
+  width: 45%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--bouquets-events {
+    background-image: url("../img/bouquets-events/bouquets-events-bg.jpg");
+
+    @include retina {
+      background-image: url("../img/bouquets-events/bouquets-events-bg@2x.jpg");
+    }
+  }
+
+  &--bouquets-bridal {
+    background-image: url("../img/bouquets-bridal/bouquets-bridal-bg.jpg");
+
+    @include retina {
+      background-image: url("../img/bouquets-bridal/bouquets-bridal-bg@2x.jpg");
+    }
+  }
+
+  &--decoration-events {
+    background-image: url("../img/decoration-events/decoration-events-bg.jpg");
+
+    @include retina {
+      background-image: url("../img/decoration-events/decoration-events-bg@2x.jpg");
+    }
+  }
+
+  &--hat-boxes {
+    background-image: url("../img/hat-boxes/hat-boxes-bg.jpg");
+
+    @include retina {
+      background-image: url("../img/hat-boxes/hat-boxes-bg@2x.jpg");
+    }
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 95%;
+    border: 1px solid $color-default-white;
+    transform: translate(3%, 3%);
+    opacity: 0.2;
+  }
+}
+
+
+@include viewport--lg {
+  .decor {
+    width: 100%;
+    height: 518px;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+
+@include viewport--sm {
+  .decor {
+    height: 443px;
+
+    &--bouquets-events {
+      background-image: url("../img/bouquets-events/bouquets-events-bg.jpg");
+  
+      @include retina {
+        background-image: url("../img/bouquets-events/bouquets-events-bg@2x.jpg");
+      }
+    }
+  
+    &--bouquets-bridal {
+      background-image: url("../img/bouquets-bridal/bouquets-bridal-bg.jpg");
+  
+      @include retina {
+        background-image: url("../img/bouquets-bridal/bouquets-bridal-bg@2x.jpg");
+      }
+    }
+  
+    &--decoration-events {
+      background-image: url("../img/decoration-events/decoration-events-bg.jpg");
+  
+      @include retina {
+        background-image: url("../img/decoration-events/decoration-events-bg@2x.jpg");
+      }
+    }
+  
+    &--hat-boxes {
+      background-image: url("../img/hat-boxes/hat-boxes-bg.jpg");
+  
+      @include retina {
+        background-image: url("../img/hat-boxes/hat-boxes-bg@2x.jpg");
+      }
+    }
+  }
+}

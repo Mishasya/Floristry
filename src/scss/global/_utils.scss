@@ -1,0 +1,42 @@
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+.scroll-lock {
+  position: fixed;
+
+  overflow-y: auto;
+
+  // требует теста, должно улучшить поведение в ios ( скрол выше \ ниже контента body )
+  /* overflow: hidden;
+  -webkit-overflow-scrolling: none;
+
+  overscroll-behavior: none;
+  touch-action: none; */
+}
+
+.btn-reset {
+  padding: 0;
+
+  background: $color-transparent;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: #1a0c06;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}

@@ -1,0 +1,384 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("../img/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+
+  @include retina {
+    background-image: url("../img/hero-bg@2x.jpg");
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: -0.9px;
+    background-image: $tamarind-to-top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.hero__container {
+  position: relative;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__inner {
+  height: calc(100% - 22px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 9%;
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+.hero__title {
+  max-width: 818px;
+  margin: 0 auto;
+  font-size: 120px;
+  line-height: 132px;
+  text-align: center;
+  letter-spacing: 0.09em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $color-default-white;
+}
+
+
+.hero__link {
+  position: absolute;
+  font-size: 20px;
+  line-height: 22px;
+  right: 26px;
+  bottom: 220px;
+  transform: rotate(90deg);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  opacity: 1;
+  transition: opacity 0.3s;
+  will-change: transform;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 20px;
+    bottom: 0;
+    right: -46px;
+    transform: rotate(-90deg);
+    background-image: url("../img/arrow.svg");
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    opacity: 0.8;
+
+    &::before {
+      animation: arrowDown 1s infinite;
+    }
+  }
+}
+
+.hero__social-list {
+  position: absolute;
+  bottom: 90px;
+}
+
+.hero__link-catalog {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.hero__link-scroll {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.hero__arrow-scroll-svg {
+  display: none;
+}
+
+.hero__scroll-svg:hover {
+  rect {
+    fill-opacity: 0.6;
+    transition: fill-opacity $default-transition-settings;
+  }
+}
+
+
+@media (max-height: 650px) and (min-width: 1024px) {
+  .hero,
+  .hero__container {
+    height: 650px;
+  }
+
+  .hero__inner {
+    padding-top: 5%;
+    justify-content: start;
+  }
+
+  .hero__title {
+    margin-bottom: 5%;
+  }
+
+  .hero__link-catalog {
+    margin-bottom: 5%;
+  }
+}
+
+
+@include viewport--lg {
+  .hero__inner {
+    padding-top: 7%;
+  }
+
+  .hero__title {
+    font-size: 90px;
+    line-height: 110px;
+    max-width: 80%;
+  }
+
+  .hero__link {
+    right: -45px;
+  }
+}
+
+
+@include viewport--lg {
+  .hero__inner {
+    padding-top: 7%;
+  }
+
+  .hero__title {
+    font-size: 90px;
+    line-height: 110px;
+    max-width: 80%;
+  }
+
+  .hero__link {
+    right: -45px;
+  }
+}
+
+
+
+@include viewport--md {
+  .hero {
+    background-image: url("../img/hero-bg_tablet@1x.jpg");
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include retina {
+      background-image: url("../img/hero-bg_tablet@2x.jpg");
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .hero__inner {
+    min-height: 100%;
+    padding-top: 9em;
+  }
+
+  .hero__title {
+    max-width: 100%;
+    font-size: 70px;
+    line-height: 77px;
+  }
+
+  .hero__link {
+    display: none;
+  }
+
+  .hero__link-catalog {
+    margin-bottom: 9em;
+  }
+
+  .hero__scroll-svg {
+    display: none;
+  }
+
+  .hero__arrow-scroll-svg {
+    display: inline-block;
+    animation: arrowAnimation 1s ease-in infinite ;
+  }
+
+  .hero__link-scroll {
+    order: 1;
+  }
+
+  .hero__social-list {
+    position: static;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: static;
+    justify-content: center;
+    order: 0;
+  }
+
+  .hero__social-list .social-list__item {
+    display: flex;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-tamarind;
+    border-radius: 50%;
+
+    &:not(:last-child) {
+      margin-right: 80px;
+    }
+
+    a {
+      display: inline-flex;
+    }
+  }
+}
+
+
+@media (max-height: 750px) and (max-width: 1023px) {
+  .hero,
+  .hero__container {
+    height: auto;
+  }
+
+  .hero__inner {
+    padding-top: 20%;
+    padding-bottom: 50px;
+  }
+
+  .hero__title,
+  .hero__link-catalog,
+  .hero__social-list {
+    margin-bottom: 10%;
+  }
+}
+
+
+@include viewport--sm {
+  .hero {
+    height: 100vh;
+    background-image: url("../img/hero-bg_mobile@1x.jpg");
+    background-position: center 64px;
+    background-size: cover;
+
+    @include retina {
+      background-image: url("../img/hero-bg_mobile@2x.jpg");
+    }
+  }
+
+  .hero__container {
+    height: 100vh;
+    min-height: auto;
+
+    min-height: -webkit-fill-available;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .hero__inner {
+    height: auto;
+    padding-top: 7em;
+    padding-bottom: 50px;
+  }
+
+  .hero__title {
+    max-width: 260px;
+    font-family: "Playfair Display";
+    font-size: 30px;
+    line-height: 42px;
+  }
+
+  .hero__link-catalog {
+    margin-bottom: 6em;
+  }
+
+  .hero__social-list {
+    width: 81%;
+    max-width: 300px;
+    margin-bottom: 6%;
+    justify-content: space-between;
+  }
+
+  .hero__social-list .social-list__item {
+    width: 37px;
+    height: 37px;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    .social-list__svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .hero__arrow-scroll-svg {
+    width: 13px;
+    height: auto;
+  }
+}
+
+
+@media (max-height: 480px) and (max-width: 767px) {
+  .hero,
+  .hero__container {
+    height: auto;
+  }
+
+  .hero__inner {
+    padding-top: 6em;
+    padding-bottom: 33px;
+  }
+
+  .hero__title,
+  .hero__link-catalog,
+  .hero__social-list {
+    margin-bottom: 10%;
+  }
+}
+
+
+@keyframes arrowDown {
+  from {
+    right: -27px;
+  }
+
+  to {
+    right: -46px;
+  }
+}
+
+
+@keyframes arrowAnimation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(1em);
+  }
+}

@@ -1,0 +1,40 @@
+.hystmodal__window {
+  width: auto;
+  min-width: 716px;
+
+  background-color: $color-tamarind;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 335px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-image: url("../img/bg-modal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include viewport--md {
+    min-width: auto;
+    padding-left: 0;
+    background-image: none;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include viewport--sm {
+    width: 100%;
+    max-width: 400px;
+    padding: 62px 20px 52px;
+  }
+}
+
+.hystmodal__close {
+  right: 20px;
+  top: 20px;
+}

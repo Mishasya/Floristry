@@ -1,0 +1,54 @@
+// Vendor
+//---------------------------------
+
+@import "vendor/normalize";
+@import "../../node_modules/swiper/swiper-bundle.css";
+@import "vendor/hystmodal.min.css";
+// @import 'swiper/swiper-bundle.css';
+
+// Global
+//---------------------------------
+//@import "fonts";
+@import "variables";
+@import "mixins";
+@import "global/reboot";
+@import "global/utils";
+@import "global/container";
+
+// Blocks
+//---------------------------------
+
+@import "blocks/btn";
+@import "blocks/logo";
+@import "blocks/btn-close";
+@import "blocks/subtitle";
+@import "blocks/form";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/menu-toggle";
+@import "blocks/catalog-slider";
+@import "blocks/nav-list";
+@import "blocks/social-list";
+@import "blocks/hero";
+@import "blocks/catalog";
+@import "blocks/catalog-frames";
+@import "blocks/promo-offers";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/services";
+@import "blocks/decor";
+@import "blocks/content";
+@import "blocks/services-slider";
+
+
+// используйте это для отключения ховеров на тач устройствах
+// ! но не используйте это для текстовых полей ( input, textarea )
+// также для любых transition обязательно указывайте transition-property
+// transition: color $default-transition-settings, а не transition: $default-transition-settings
+
+/* @media (hover: hover), screen and (min-width: 0\0) {
+  &:hover,
+  &:focus {
+    color: red;
+  }
+} */
